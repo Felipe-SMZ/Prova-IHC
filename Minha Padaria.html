@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padoca do Felipão</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Quicksand:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- HEURÍSTICA A: Mensagem de feedback -->
+    <div class="feedback-msg" id="feedback"></div>
+
+    <header>
+        <!-- SIGNO VISUAL (Questão 3.1): Logo que remete a pães-->
+        <div class="logo">
+            <img src="padoca.png" alt="Logo da Padaria">
+        </div>
+
+        <!-- HEURÍSTICA B: Navegação consistente e padronizada -->
+        <nav>
+            <ul>
+                <li><a href="#cafeteria">Cafeteria</a></li>
+                <li><a href="#matinais">Matinais</a></li>
+                <li><a href="#encomendas">Encomendas</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HEURÍSTICA D: Informações do mundo real -->
+    <section class="destaque">
+        <h2>Bem-vindo à Padoca do Felipão</h2>
+        <p>Na Padoca do Felipão, tradição e sabor se encontram! Produtos fresquinhos todos os dias, feitos com carinho e
+            ingredientes selecionados.</p>
+
+        <div class="info-horario">
+            <div class="info-item">
+                <span>🕒</span>
+                <span>Seg-Sáb: 6h às 20h</span>
+            </div>
+            <div class="info-item">
+                <span>📍</span>
+                <span>Rua das Padarias, 123</span>
+            </div>
+            <div class="info-item">
+                <span>📞</span>
+                <span>(11) 98765-4321</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- AFFORDANCE: Cards visuais e interativos -->
+    <section class="cardapio" id="cafeteria">
+        <h2>Nosso Cardápio</h2>
+
+        <h3>☕ Cafeteria</h3>
+        <div class="card-container">
+            <div class="card-food">
+                <h4>Cafezinho</h4>
+                <p>Café tradicional brasileiro</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 3,00</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Cafezinho')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Café Média</h4>
+                <p>Café em copo médio</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 4,00</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Café Média')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Pingado</h4>
+                <p>Café com leite</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 4,50</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Pingado')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Café Expresso Pequeno</h4>
+                <p>Expresso tradicional</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 5,00</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Expresso Pequeno')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Café Expresso Grande</h4>
+                <p>Expresso em xícara grande</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 7,00</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Expresso Grande')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Capuccino Pequeno</h4>
+                <p>Capuccino cremoso</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 8,00</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Capuccino Pequeno')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Capuccino Grande</h4>
+                <p>Capuccino cremoso grande</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 10,00</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Capuccino Grande')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Chocolate Batido</h4>
+                <p>Chocolate quente tradicional</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 8,00</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Chocolate Batido')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Chocolate Pequeno</h4>
+                <p>Chocolate cremoso</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 7,00</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Chocolate Pequeno')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Chocolate Grande</h4>
+                <p>Chocolate cremoso grande</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 9,00</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Chocolate Grande')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Leite Copo Americano</h4>
+                <p>Leite puro</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 4,00</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Leite Americano')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Leite Copo Pingado</h4>
+                <p>Leite com pingado de café</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 4,50</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Leite Pingado')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Café com Leite 400ml</h4>
+                <p>Café com leite grande</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 6,00</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Café com Leite')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Chá Variados</h4>
+                <p>Diversos sabores de chá</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 4,00</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Chá')">Adicionar</button>
+                </div>
+            </div>
+        </div>
+
+        <h3 id="matinais">🥖 Matinais</h3>
+        <div class="card-container">
+            <div class="card-food">
+                <h4>Pão com Manteiga</h4>
+                <p>Pão francês com manteiga</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 5,00</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Pão com Manteiga')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Pão com Requeijão</h4>
+                <p>Pão francês com requeijão cremoso</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 5,50</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Pão com Requeijão')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Pão de Queijo</h4>
+                <p>Pão de queijo mineiro tradicional</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 4,00</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Pão de Queijo')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Pão de Queijo c/ Requeijão</h4>
+                <p>Pão de queijo recheado</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 5,50</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarCarrinho('Pão de Queijo Recheado')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Pão Mineirinho</h4>
+                <p>Pão mineiro quentinho</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 6,00</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Pão Mineirinho')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Pão com Ovo</h4>
+                <p>Pão francês com ovo frito</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 7,00</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Pão com Ovo')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Pão com Ovo e Bacon</h4>
+                <p>Pão com ovo e bacon crocante</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 9,00</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Pão com Ovo e Bacon')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Pão com Ovo e Queijo</h4>
+                <p>Pão com ovo e queijo derretido</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 9,50</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Pão com Ovo e Queijo')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Pão com Salsicha</h4>
+                <p>Pão com salsicha no molho de tomate</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 8,00</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Pão com Salsicha')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Baguete com Manteiga</h4>
+                <p>Baguete francesa com manteiga</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 6,00</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Baguete com Manteiga')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Baguete com Requeijão</h4>
+                <p>Baguete com requeijão cremoso</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 6,50</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarCarrinho('Baguete com Requeijão')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Bisnaga com Manteiga</h4>
+                <p>Bisnaga fresca com manteiga</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 5,50</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Bisnaga com Manteiga')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Bisnaga com Requeijão</h4>
+                <p>Bisnaga com requeijão</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 6,00</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarCarrinho('Bisnaga com Requeijão')">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card-food">
+                <h4>Fatia de Bolo Copa</h4>
+                <p>Fatia generosa de bolo caseiro</p>
+                <div class="card-footer">
+                    <span class="preco">R$ 7,00</span>
+                    <button class="btn-adicionar" onclick="adicionarCarrinho('Fatia de Bolo')">Adicionar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HEURÍSTICA C: Prevenção de erros com validação -->
+    <section class="encomendas" id="encomendas">
+        <div class="form-container">
+            <h2>📋 Faça sua Encomenda</h2>
+
+            <div class="form-group">
+                <label for="nome">Nome completo *</label>
+                <input type="text" id="nome" placeholder="Digite seu nome">
+                <span class="error-msg" id="erro-nome">⚠️ Nome é obrigatório</span>
+            </div>
+
+            <div class="form-group">
+                <label for="telefone">Telefone (WhatsApp) *</label>
+                <input type="tel" id="telefone" placeholder="11987654321">
+                <span class="error-msg" id="erro-telefone">⚠️ Telefone inválido (10-11 dígitos)</span>
+            </div>
+
+            <div class="form-group">
+                <label for="produto">Produto *</label>
+                <select id="produto">
+                    <option value="">Selecione um produto</option>
+                    <option value="bolo">Bolo personalizado</option>
+                    <option value="salgados">Salgados para festa</option>
+                    <option value="paes">Pães especiais</option>
+                </select>
+                <span class="error-msg" id="erro-produto">⚠️ Selecione um produto</span>
+            </div>
+
+            <div class="form-group">
+                <label for="quantidade">Quantidade *</label>
+                <input type="number" id="quantidade" min="1" placeholder="1">
+                <span class="error-msg" id="erro-quantidade">⚠️ Quantidade mínima: 1</span>
+            </div>
+
+            <button class="btn-enviar" onclick="enviarEncomenda()">Enviar Encomenda</button>
+        </div>
+    </section>
+
+    <!-- HEURÍSTICA D: Footer com informações reais e úteis -->
+    <footer id="contato">
+        <div class="footer-content">
+            <div>
+                <h3>Contato</h3>
+                <p>📞 (11) 98765-4321</p>
+                <p>📧 contato@padocadofelipao.com.br</p>
+            </div>
+            <div>
+                <h3>Horário</h3>
+                <p>Segunda a Sábado: 6h às 20h</p>
+                <p>Domingo: 6h às 14h</p>
+            </div>
+            <div>
+                <h3>Endereço</h3>
+                <p>Rua das Padarias, 123</p>
+                <p>Centro - São Paulo/SP</p>
+            </div>
+        </div>
+        <p>&copy; 2025 Padoca do Felipão - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,474 @@
+/* ===================================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f5f1e8;
+    color: #3a3226;
+    line-height: 1.6;
+}
+
+/* ===================================
+   HEADER - HEURÍSTICA B: Consistência
+   =================================== */
+header {
+    background: linear-gradient(135deg, #8b6f47 0%, #6b5644 100%);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* ===================================
+   SIGNO VISUAL - Questão 3.1
+   =================================== */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #f5f1e8;
+}
+
+.logo-icon {
+    width: 55px;
+    height: 55px;
+    background: #f5f1e8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #f5f1e8;
+}
+
+.logo img {
+    
+    max-width: 120px;
+    height: auto;
+    display: block;
+    border-radius: 2%;
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        max-width: 150px;
+    }
+}
+
+/* ===================================
+   NAVEGAÇÃO - AFFORDANCE
+   =================================== */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #f5f1e8;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    background: rgba(245, 241, 232, 0.15);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+nav a:hover {
+    background: rgba(245, 241, 232, 0.3);
+    transform: scale(1.08);
+}
+
+/* ===================================
+   FEEDBACK - HEURÍSTICA A: Visibilidade
+   =================================== */
+.feedback-msg {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    background: #6b8e23;
+    color: white;
+    padding: 16px 28px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    display: none;
+    z-index: 1000;
+    font-weight: 600;
+}
+
+.feedback-msg.show {
+    display: block;
+    animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ===================================
+   SEÇÃO DESTAQUE
+   =================================== */
+.destaque {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(180deg, #e8dcc4 0%, #f5f1e8 100%);
+    position: relative;
+}
+
+.destaque::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://images.unsplash.com/photo-1587241321921-91a834d6d191?q=80&w=1170&auto=format&fit=crop') center/cover;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.destaque h2,
+.destaque p,
+.info-horario {
+    position: relative;
+    z-index: 1;
+}
+
+.destaque h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8em;
+    color: #000000;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.destaque p {
+    font-size: 1.25em;
+    max-width: 750px;
+    margin: 0 auto 35px;
+    color: #000000;
+}
+
+.info-horario {
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.05em;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #8b6f47;
+}
+
+/* ===================================
+   CARDÁPIO
+   =================================== */
+.cardapio {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cardapio h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.3em;
+    color: #6b5644;
+    text-align: center;
+    margin-bottom: 45px;
+    font-weight: 700;
+}
+
+.cardapio h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.7em;
+    color: #3a3226;
+    margin-bottom: 25px;
+    margin-top: 30px;
+    border-left: 6px solid #8b6f47;
+    padding-left: 18px;
+    font-weight: 600;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 28px;
+    margin-bottom: 45px;
+}
+
+/* ===================================
+   CARDS - AFFORDANCE
+   =================================== */
+.card-food {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-food::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #8b6f47, #c9a961);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.card-food:hover::before {
+    transform: scaleX(1);
+}
+
+.card-food:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(107, 86, 68, 0.2);
+    border-color: #c9a961;
+}
+
+.card-food h4 {
+    font-family: 'Poppins', sans-serif;
+    color: #6b5644;
+    font-size: 1.35em;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.card-food p {
+    color: #6b6b6b;
+    margin-bottom: 18px;
+    min-height: 45px;
+    font-size: 1em;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.preco {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #8b6f47;
+}
+
+/* BOTÃO ADICIONAR - AFFORDANCE */
+.btn-adicionar {
+    background: linear-gradient(135deg, #8b6f47 0%, #6b5644 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1em;
+}
+
+.btn-adicionar:hover {
+    background: linear-gradient(135deg, #6b5644 0%, #4a3d2f 100%);
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(107, 86, 68, 0.3);
+}
+
+/* ===================================
+   FORMULÁRIO - HEURÍSTICA C: Prevenção
+   =================================== */
+.encomendas {
+    padding: 65px 20px;
+    background: linear-gradient(180deg, #e8dcc4 0%, #f5f1e8 100%);
+}
+
+.form-container {
+    max-width: 650px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    border-top: 4px solid #8b6f47;
+}
+
+.form-container h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2em;
+    color: #6b5644;
+    text-align: center;
+    margin-bottom: 35px;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #3a3226;
+    font-size: 1.05em;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #d4cbb5;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+    font-family: 'Quicksand', sans-serif;
+    background: #fafaf8;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #8b6f47;
+    background: white;
+}
+
+.form-group input.error,
+.form-group select.error {
+    border-color: #c44536;
+}
+
+/* MENSAGENS DE ERRO - HEURÍSTICA A */
+.error-msg {
+    color: #c44536;
+    font-size: 0.95em;
+    margin-top: 8px;
+    display: none;
+    font-weight: 500;
+}
+
+.error-msg.show {
+    display: block;
+}
+
+.btn-enviar {
+    width: 100%;
+    background: linear-gradient(135deg, #8b6f47 0%, #6b5644 100%);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 1.15em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-enviar:hover {
+    background: linear-gradient(135deg, #6b5644 0%, #4a3d2f 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(107, 86, 68, 0.3);
+}
+
+/* ===================================
+   FOOTER - HEURÍSTICA D
+   =================================== */
+footer {
+    background: linear-gradient(135deg, #6b5644 0%, #4a3d2f 100%);
+    color: #f5f1e8;
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 35px;
+    margin-bottom: 25px;
+}
+
+footer h3 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 18px;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #c9a961;
+}
+
+footer p {
+    font-size: 1.05em;
+    margin: 8px 0;
+    color: #e8dcc4;
+}
+
+/* ===================================
+   RESPONSIVIDADE
+   =================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo h1 {
+        font-size: 1.3em;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    .destaque h2 {
+        font-size: 2em;
+    }
+
+    .cardapio h2 {
+        font-size: 1.8em;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+}
